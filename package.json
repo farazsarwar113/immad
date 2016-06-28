@@ -1,0 +1,19 @@
+{
+  "name": "immad",
+  "version": "1.0.0",
+  "description": "I don't know",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "helloworld"
+  ],
+  "author": "immad",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}
