@@ -1,0 +1,170 @@
+.pad_zero{
+	padding: 0;
+}
+
+.upperHeader{
+	background-image: url('../images/img2.jpg');
+	background-size: cover;
+	background-position: 100%;
+	position: relative;
+	&:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background: rgba(232,111,117,0.3);
+	}
+
+		.uh_height{
+			height: 400px;
+			display: table;
+			z-index: 2;
+
+				.uh_First{
+				    display: table-cell;
+				    vertical-align: middle;
+				    width: 30%;
+				    padding-left: 15px;
+
+				    	a{
+							width: 40px;
+							height: 40px;
+							border: 1px solid $color-4;
+							display: inline-block;
+							position: relative;
+							margin-right: 10px;
+							@include border-radius(50%);
+							&:hover{
+								border-color: $coral;
+							}
+							&:hover i{
+								color: $coral;
+							}
+
+								i{
+									color: $color-4;
+									position: absolute;
+									width: 100%;
+									text-align: center;
+									top: 50%;
+									transform: translateY(-50%);
+								}
+						}
+				}
+
+				.uh_Second{
+					display: table-cell;
+				    vertical-align: middle;
+				    width: 40%;
+				    	img{
+				    		width: 100%;
+				    	}
+				}
+
+				.uh_Third{
+					display: table-cell;
+				    vertical-align: middle;
+				    width: 30%;
+				    padding-left: 15px;
+
+				    	.slide-in-out {
+						    text-decoration:none;
+						    color: $color-4;
+						    font-size: 23px;
+						    font-family: $primary-font;
+						    font-weight: 700;
+						    letter-spacing: 0.1em;
+						    text-transform: capitalize;
+						    display: inline-block;
+						    position: relative; /* prepare the position for sliding in and out */
+						    /* add a empty string before the elment with class .slide-in-out  */
+							&:before {
+							    content: '';
+							    display: block;
+							    height: 5px;
+							    width: 0;
+							    transition: width 0s ease, background-color .5s ease;
+							    -webkit-transition: width 0s ease, background-color .5s ease;
+							    -moz-transition: width 0s ease, background-color .5s ease;
+							     
+							    /* position the content to the left bottom corner of the parent element to make it to slide in from left to right on hover */
+							    position: absolute;
+							    left: 0;
+							    bottom: 0;
+							}
+							/* add a empty string after the elment with class .slide-in-out  */
+							&:after {
+							    content: '';
+							    display: block;
+							    height: 5px;
+							    width: 0;
+							    background: $coral;
+							    transition: width .5s ease;
+							    -webkit-transition: width .5s ease, background-color .5s ease;
+							    -moz-transition: width .5s ease, background-color .5s ease;
+							    /* position the content to the left bottom corner of the parent element to make it to slide out from left to right on hover */
+							    position: absolute;
+							    right: 0;
+							    bottom: 0;
+							}
+							 
+							/* Change the width and background on hover, aka sliding in and out */
+							&:hover:before {
+							    width: 100%;
+							    background: $coral;
+							    transition: width .5s ease;
+							    -webkit-transition: width .5s ease;
+							    -moz-transition: width .5s ease;
+							}
+							&:hover:after {
+							    width: 100%;
+							    background: transparent;
+							    transition: all 0s ease;
+							    -webkit-transition: width 0s ease;
+							    -moz-transition: width .0s ease;
+							}
+						}
+						
+				}
+
+		}
+
+}
+
+
+// Navigation
+
+.body-wrap{
+	margin-top: 10px;
+	
+		.navbar-inverse{
+			background: $color-4;
+			border: none;
+			@include border-radius(0px);
+
+				a{
+					background: transparent;
+					color: $grey;
+					font-family: $primary-font;
+					font-size: 13px;
+					text-transform: uppercase;
+					letter-spacing: 0.04em;
+					&:hover{
+						color: $black !important;
+					}
+				}
+
+				.active{
+					a{
+						color: $black;
+						background: transparent;
+						&:hover{
+							background: transparent !important;
+						}
+					}
+				}
+		}
+}

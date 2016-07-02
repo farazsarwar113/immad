@@ -9,16 +9,19 @@ gulp.task('serve', ['sass'], function() {
         server: "./app"
     });
 
-    gulp.watch("app/scss/styles.scss", ['sass']);
+    gulp.watch("app/assets/scss/styles.scss", ['sass']);
     gulp.watch("app/index.html").on('change', browserSync.reload);
 });
 
 gulp.task('sass', function() {
 	//Convert SCSS to CSS
-	return gulp.src('app/scss/styles.scss')
-		.pipe(sass())
-		.pipe(gulp.dest('app/css'))
+	return gulp.src('app/assets/scss/styles.scss')
+		.pipe(sass({
+	      // includePaths: require('node-bourbon').with('other/path', 'another/path') 
+	      // - or - 
+	      includePaths: require('node-bourbon').includePaths
+	    }))
+		.pipe(gulp.dest('app/assets/css'))
 		.pipe(browserSync.stream());
 });
 
-gulp.task('default', ['serve']);

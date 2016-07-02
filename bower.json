@@ -1,0 +1,7 @@
+{
+  "name": "my-project",
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "bootstrap-sass": "^3.3.6"
+  }
+}
